@@ -1,0 +1,15 @@
+copiar package.json y tsconfig.json , y luego:
+npm install
+
+01-middlwares asi debe ser el orden de la estructura, el middlware debe estar antes de la progracion del Node
+
+en los 2 primeros ejemplos el middlware analiza la ruta "/" (desde la raiz)
+
+instalar el motor de pug
+npm install pug --save
+
+si el a tiene class
+a.principal(href='')
+
+si el a tiene un id
+a#principal
