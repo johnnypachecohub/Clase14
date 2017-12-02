@@ -13,3 +13,16 @@ a.principal(href='')
 
 si el a tiene un id
 a#principal
+
+en el layou, el block hace un REEMPLACE de etiquetas
+
+en el 02 revisar el package json, se agrego un ts-node
+solo basta ejecuta npm start y se levanta la aplicacion
+
+nodemon.json se setea la configuracion, watch cuando cambie se reinicia el servidor de node
+sudo npm i nodemon -g
+
+en el 02, solo basta escribir: nodemon   y se levantara la aplicacion
+en el 02, npm run comandoCualquiera  y se levantara ese servidor (estan en el package json)
+
+git clone (ruta) 

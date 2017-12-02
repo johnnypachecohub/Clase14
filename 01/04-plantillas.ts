@@ -14,7 +14,16 @@ app.set("views", "./vistas")
 
 // Rutas
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
-	res.render("home")
+	res.render("home", {
+		titulo: "Curso FS Javascript",
+		pagina: "El Comercio",
+		url: "http://elcomercio.pe",
+		usuarios: [
+			{id: 1, nombre: "Nombre 1"},
+			{id: 2, nombre: "Nombre 2"},
+			{id: 3, nombre: "Nombre 3"}
+		]
+	})
 
 })
 
