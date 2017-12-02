@@ -26,3 +26,25 @@ en el 02, solo basta escribir: nodemon   y se levantara la aplicacion
 en el 02, npm run comandoCualquiera  y se levantara ese servidor (estan en el package json)
 
 git clone (ruta) 
+
+
+sudo npm i body-parser --save
+
+ejecutamos el proyecto con: npm run comandoCualquiera
+como en servidor.ts no tenemos nada que haga post, usamos la extension de google postman para simularlo
+
+para que soporte put y delete
+npm i method-override --save
+
+morgan: cada ez q alguien hace una peticion muestra una linea con que metodos ha sido echa la peticion, con que ruta y cual es el estado de la respuesta, crea log indicando sobre todas las peticiones estan sucediendo
+sudo npm i morgan --save
+
+-------------------------
+base de datos gratuita: mlab o cloudmongo  (500 MB libres)
+
+drivers para mongo: mongose
+		 y @types/mongose
+
+sudo npm i mongose @types/mongose --save
+luego modificar tsconfig.json  para agregar tipos
+
