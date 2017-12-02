@@ -42,9 +42,18 @@ sudo npm i morgan --save
 -------------------------
 base de datos gratuita: mlab o cloudmongo  (500 MB libres)
 
-drivers para mongo: mongose
-		 y @types/mongose
+drivers para mongo: mongoose
+		 y @types/mongoose
 
-sudo npm i mongose @types/mongose --save
+sudo npm i mongoose @types/mongoose --save
 luego modificar tsconfig.json  para agregar tipos
+
+no se llaman tablas sino colecciones en mongo
+
+en mixFormulario antes habia esto:
+<!--
+mixin formulario()
+	form(method="post", action="/registro?_method=PUT")
+		button(type="submit", value="Enviar") Enviar
+-->
 

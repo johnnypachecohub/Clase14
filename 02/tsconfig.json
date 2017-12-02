@@ -5,7 +5,7 @@
 		"types": [
 			"node",
 			"express",
-			"mongose"
+			"mongoose"
 		]
 	},
 	"include": [

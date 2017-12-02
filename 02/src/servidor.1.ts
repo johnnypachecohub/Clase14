@@ -6,7 +6,6 @@ import methodOverride = require("method-override")  // es un middleware
 import * as morgan from 'morgan'		//es otro middleware (morgan no bloquea nada, solo registra)
 import * as mongoose from "mongoose"
 import {conexionMongo} from './config/conexiones'
-import Usuario from './api/modelos/Usuarios'
 
 // Settings
 const app:Application = express()
@@ -27,47 +26,25 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
 	res
 		.status(200)
 		.type("text/plain")
-		.send("Home")
+		.send("todo ok")
 })
 
-app.get("/usuario/registro", (req: Request, res: Response, next: NextFunction) => {
-	res.render("usuarioFormulario")
+app.post("/", (req: Request, res: Response, next: NextFunction) => {
+	res
+		.status(200)
+		.type("application/json")
+		.send(JSON.stringify(req.body))
 })
 
-app.post("/usuario", (req: Request, res: Response, next: NextFunction) => {
-	const nombre = req.body.nombre
-	const apellido = req.body.apellido
-
-	//solo se usa el new cuando agregamos usuarios
-	const usuario = new Usuario()
-	usuario["nombre"] = nombre
-	usuario["apellido"] = apellido
-
-	usuario
-		.save()
-		.then(registro => {
-			res.redirect("/usuario")
-		})
-		.catch(error => {
-			res
-				.status(500)
-				.type("text/plain")
-				.send(error)
-		})
+app.put("/registro", (req: Request, res: Response, next: NextFunction) => {
+	res
+		.status(200)
+		.type("text/plain")
+		.send("Enviado usando el metodo PUT")
 })
 
-app.get("/usuario", (req: Request, res: Response, next: NextFunction) => {
-	Usuario
-		.find({})
-		.then(registros => {
-			res.json(registros)
-		})
-		.catch(error => {
-			res
-				.status(500)
-				.type("text/plain")
-				.send(error)
-		})
+app.get("/formulario", (req: Request, res: Response, next: NextFunction) => {
+	res.render("formulario")
 })
 
 // El servidor
@@ -76,4 +53,5 @@ app.listen(4000, () => {
 })
 
 
-//http://localhost:4000/usuario/registro
+//http://localhost:4000/formulario
+//http://localhost:4000/registro?_method=PUT
